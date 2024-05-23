@@ -6,10 +6,6 @@ import org.testng.annotations.Test;
 
 public class AllTests extends BaseTest {
 
-    /* todo: "для того, чтобы тесты не падали - методы сделаны так, чтобы регистр текста не учитывался при сравнении. Так как не ясно наверняка - важно ли это." */
-    /* todo: ""NAME(A TO Z)" изменено на "Name (A to Z)", чтобы тесты не падали" */
-    /* todo: ""NAME Z TO A" изменено на "Name (Z to A)", чтобы тесты не падали" */
-
     @Test(dataProvider = "dataProvider", timeOut = 5000)
     @Owner(value = "Иванов Иван")
     @Story("Проверка работы страницы с продуктами пользователя")
