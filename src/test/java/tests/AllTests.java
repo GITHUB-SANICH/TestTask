@@ -1,13 +1,17 @@
 package tests;
 
-import io.qameta.allure.Owner;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import utils.ExcelDataProviders;
+import utils.TestListener;
 
+@Listeners(TestListener.class)
 public class AllTests extends BaseTest {
-
-    @Test(dataProvider = "dataProvider", timeOut = 5000)
+    @Test(dataProvider = "infoForAuthorizationToUsers", dataProviderClass = ExcelDataProviders.class, timeOut = 5000)
+    @Severity(SeverityLevel.NORMAL)
     @Owner(value = "Иванов Иван")
+    @Link(name = "Site: Swag Labs", url = "https://www.saucedemo.com/")
     @Story("Проверка работы страницы с продуктами пользователя")
     public void checkingTheOperationOfTheProductPage(String login, String password) {
         steps.goToTheAuthorizationPage(new String[]{"Username", "Password"}, "LOGIN")
@@ -21,7 +25,9 @@ public class AllTests extends BaseTest {
     }
 
     @Test(timeOut = 5000)
+    @Severity(SeverityLevel.NORMAL)
     @Owner(value = "Иванов Иван")
+    @Link(name = "Site: Swag Labs", url = "https://www.saucedemo.com/")
     @Story("Проверка удаления товара из списка на странице с корзиной")
     public void checkingTheRemovalOfAnItemFromTheListOnTheShoppingCartPage() {
         steps.goToTheAuthorizationPage(new String[]{"Username", "Password"}, "LOGIN")

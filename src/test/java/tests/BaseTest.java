@@ -5,7 +5,6 @@ import org.openqa.selenium.html5.WebStorage;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
 import steps.AuthorizationSteps;
 import utils.DriverFactory;
 
@@ -43,16 +42,5 @@ public abstract class BaseTest {
     @AfterClass
     public void tearDown() {
         driver.quit();
-    }
-
-
-    @DataProvider(name = "dataProvider")
-    public Object[][] dataProvider() {
-        return new Object[][]{
-                {"standard_user", "secret_sauce"},
-                {"locked_out_user", "secret_sauce"},
-                {"problem_user", "secret_sauce"},
-                {"performance_glitch_user", "secret_sauce"}
-        };
     }
 }

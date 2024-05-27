@@ -20,6 +20,11 @@
         <aspectj.version>1.9.21</aspectj.version>
         <allure-maven.version>2.10.0</allure-maven.version>
         <allure.version>2.15.0</allure.version>
+        <!--       version-library читалка Excel дял DataProvider-->
+        <poi.version>5.2.5</poi.version>
+        <poi-ooxml.version>5.2.5</poi-ooxml.version>
+        <poi-scratchpad.version>5.2.5</poi-scratchpad.version>
+        <!--       /version-library читалка Excel дял DataProvider-->
     </properties>
     <dependencies>
         <dependency>
@@ -50,6 +55,28 @@
             <version>${assertj-core}</version>
             <scope>test</scope>
         </dependency>
+
+        <!--        Excel читалка дял DataProvider-->
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${poi.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poi-ooxml.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-scratchpad -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-scratchpad</artifactId>
+            <version>${poi-scratchpad.version}</version>
+        </dependency>
+        <!--        /Excel читалка дял DataProvider-->
+
     </dependencies>
     <build>
         <plugins>
